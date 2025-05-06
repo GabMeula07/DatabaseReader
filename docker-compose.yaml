@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: bi_postgres
+    environment:
+      POSTGRES_USER: biuser
+      POSTGRES_PASSWORD: bisenha
+      POSTGRES_DB: bidb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
